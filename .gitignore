@@ -1,0 +1,9 @@
+.vim/autoload/
+.vim/pack/
+.vim/plugged/
+.vim/.netrwhist
+
+*.swp
+.DS_Store
+.bash_completion.d/flutter.sh
+bin/composer.phar

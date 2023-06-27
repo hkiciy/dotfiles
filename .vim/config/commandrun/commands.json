@@ -1,0 +1,100 @@
+{
+  "typescript": {
+      "cmd": "node",
+      "cmdafter": "-r esbuild-register",
+      "file": "%"
+  },
+  "dart": {
+    "cmd": "dart",
+    "cmdafter": "--enable-asserts",
+    "file": "%"
+  },
+  "rust": {
+    "cmd": "cargo",
+    "cmdafter": "run"
+  },
+  "kotlin": {
+    "cmd": "kotlinc",
+    "cmdafter": "-script",
+    "file": "%",
+    "extensions": {
+      "kt": {
+        "cmd": "kotlinc",
+        "arg": "-include-runtime -d output.jar",
+        "file": "*.kt",
+        "next": {
+          "cmd": "java -jar output.jar"
+        }
+      }
+    }
+  },
+  "java": {
+    "cmd": "javac",
+    "file": "%",
+    "next": {
+      "cmd": "java"
+    }
+  },
+  "javascript": {
+    "cmd": "node",
+    "file": "%"
+  },
+  "php": {
+    "cmd": "php",
+    "file": "%"
+  },
+  "ruby": {
+    "cmd": "ruby",
+    "file": "%"
+  },
+  "sh": {
+    "cmd": "bash",
+    "file": "%"
+  },
+  "lua": {
+    "cmd": "luajit",
+    "file": "%"
+  },
+  "scala": {
+    "cmd": "scalac",
+    "file": "%",
+    "next": {
+      "cmd": "scala"
+    }
+  },
+  "haskell": {
+    "cmd": "stack",
+    "cmdafter": "runghc",
+    "file": "%"
+  },
+  "go": {
+    "cmd": "go",
+    "cmdafter": "run",
+    "file": "%"
+  },
+  "python": {
+    "cmd": "python",
+    "cmdafter": "-u",
+    "file": "%"
+  },
+  "vim": {
+    "vimcmd": "source %"
+  },
+  "c": {
+    "cmd": "clang",
+    "file": "%",
+    "cmdbefore": "",
+    "cmdafter": "",
+    "arg": "",
+    "next": {
+      "cmd": "./a.out"
+    }
+  },
+  "cpp": {
+    "cmd": "clang++",
+    "file": "%",
+    "next": {
+      "cmd": "./a.out"
+    }
+  }
+}

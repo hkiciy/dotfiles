@@ -1,0 +1,51 @@
+[user]
+    name = Hiromitsu Kishi
+    email = hkiciy@gmail.com
+[core]
+    editor = vim
+    pager = less -r
+    autocrlf = false
+    quotepath = false
+[alias]
+    a = add -A
+    b = branch
+    c = commit
+    d = diff
+    m = commit
+    cm = commit -m
+    cam = commit --amend -m
+    acm = !git a && git commit -m
+    aci = !git a && git commit -m 'Initial commit'
+    cp = cherry-pick
+    l = log --reverse --date=iso --pretty=format:'%h: %cd: %s'
+    ln = log --reverse --date=iso --pretty=format:'%h: %cd: %s' --name-only
+    lg = log --graph --date=iso --pretty=format:'%h: %cd: %s'
+    rl = reflog
+    s = status
+    m = merge
+    sw = switch
+    swc = switch -c
+    swm = switch main
+[color]
+    ui = true
+[credential]
+    helper = cache
+[diff]
+    indentHeuristic = true
+    compactionHeuristic = true
+[ghq]
+    root = ~/source/golang/src
+[init]
+    defaultBranch = main
+[interactive]
+    diffFilter = diff-highlight
+[merge]
+    tool = vimdiff
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
+[pull]
+    rebase = false
+[ui]
+    ui = true

@@ -1,0 +1,294 @@
+set encoding=utf-8
+scriptencoding utf-8
+
+"
+" Disable standard plugins
+"
+
+let g:no_gvimrc_example = 1
+let g:no_vimrc_example = 1
+let g:did_install_default_menus = 1
+let g:did_install_syntax_menu = 1
+let g:loaded_2html_plugin = 1
+let g:loaded_getscript = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_gzip = 1
+let g:loaded_logiPat = 1
+let g:loaded_netrw = 1
+let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_rrhelper = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_vimball = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
+let g:skip_loading_mswin = 1
+
+
+"
+" Plugins
+"
+
+packadd! matchit
+call plug#begin()
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
+Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
+Plug 'mattn/emmet-vim', {'for': ['html', 'php', 'vue']}
+Plug 'leafOfTree/vim-vue-plugin', {'for': 'vue'}
+Plug 'junegunn/fzf'
+Plug 'hkiciy/fairu-vim'
+Plug 'hkiciy/temtem-vim'
+Plug 'git@github.com:hkiciy/commandrun-vim.git'
+Plug 'git@github.com:hkiciy/comment.vim.git'
+Plug 'git@github.com:hkiciy/autlin-vim.git'
+Plug 'git@github.com:hkiciy/snpten.git'
+call plug#end()
+
+
+"
+" ## Plugin settings
+"
+
+let g:ale_cursor_detail = 0
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_open_list = 1
+let g:ale_php_phpcbf_standard = 'PSR12'
+let g:ale_php_phpstan_level = '5'
+let g:ale_sign_column_always = 1
+let g:ale_virtualtext_cursor = 0
+let g:php_phpcs_standard = 'PSR12'
+let g:ale_linter_aliases = {
+            \   'vue': ['vue', 'javascript', 'typescript'],
+            \ }
+let g:ale_linters = {
+            \   'css': ['stylelint'],
+            \   'php': ['php'],
+            \   'python': ['pylint'],
+            \   'typescript': ['eslint'],
+            \   'vim': ['vint'],
+            \   'vue': ['eslint'],
+            \ }
+let g:ale_fixers = {
+            \   'css': ['prettier'],
+            \   'javascript': ['prettier'],
+            \   'php': ['pint'],
+            \   'sass': ['prettier'],
+            \   'scss': ['prettier'],
+            \   'typescript': ['eslint'],
+            \   'vue': ['eslint'],
+            \ }
+let g:rustfmt_autosave = 1
+let g:lsp_diagnostics_enabled = 0
+let g:asyncomplete_auto_completeopt = 0
+let g:lsp_settings = {
+      \   'intelephense': {
+      \     'workspace_config': {
+      \       'intelephense': {
+      \         'stubs': [
+      \             'php',
+      \             'apache',
+      \             'bcmath',
+      \             'bz2',
+      \             'calendar',
+      \             'com_dotnet',
+      \             'Core',
+      \             'ctype',
+      \             'curl',
+      \             'date',
+      \             'dba',
+      \             'dom',
+      \             'enchant',
+      \             'exif',
+      \             'FFI',
+      \             'fileinfo',
+      \             'filter',
+      \             'fpm',
+      \             'ftp',
+      \             'gd',
+      \             'gettext',
+      \             'gmp',
+      \             'hash',
+      \             'iconv',
+      \             'imap',
+      \             'intl',
+      \             'json',
+      \             'ldap',
+      \             'libxml',
+      \             'mbstring',
+      \             'meta',
+      \             'mysqli',
+      \             'oci8',
+      \             'odbc',
+      \             'openssl',
+      \             'pcntl',
+      \             'pcre',
+      \             'PDO',
+      \             'pdo_ibm',
+      \             'pdo_mysql',
+      \             'pdo_pgsql',
+      \             'pdo_sqlite',
+      \             'pgsql',
+      \             'Phar',
+      \             'posix',
+      \             'pspell',
+      \             'readline',
+      \             'Reflection',
+      \             'session',
+      \             'shmop',
+      \             'SimpleXML',
+      \             'snmp',
+      \             'soap',
+      \             'sockets',
+      \             'sodium',
+      \             'SPL',
+      \             'sqlite3',
+      \             'standard',
+      \             'superglobals',
+      \             'sysvmsg',
+      \             'sysvsem',
+      \             'sysvshm',
+      \             'tidy',
+      \             'tokenizer',
+      \             'xml',
+      \             'xmlreader',
+      \             'xmlrpc',
+      \             'xmlwriter',
+      \             'xsl',
+      \             'Zend OPcache',
+      \             'zip',
+      \             'zlib',
+      \             'wordpress',
+      \         ]
+      \       }
+      \     }
+      \   }
+      \ }
+
+call timer_start(1, { -> execute('set omnifunc=lsp#complete', '')})
+
+
+"
+" Settings
+"
+
+" word
+set iskeyword&
+set iskeyword+=_
+set iskeyword+=-
+set iskeyword+=$
+" For html
+set matchpairs&
+set matchpairs+=<:>
+" Case insensitive
+set ignorecase
+" Make tabs easier to see
+set list
+set listchars=tab:>-
+" Clipboard
+set clipboard&
+set clipboard-=autoselect
+if has('unix')
+    set clipboard^=unnamedplus
+else
+    set clipboard^=unnamed
+endif
+" Encoding
+set fileencodings=ucs-bom,utf-8,euc-jp,sjis,cp932,default,latin1
+" Status line
+set laststatus=2
+set statusline= " ステータスラインを初期化
+set statusline+=%m " 修正フラグ
+set statusline+=%r " 読み込み専用フラグ
+set statusline+=%f\  " ファイル名
+set statusline+=%= " 右寄せ
+set statusline+=%c,%l/%L " 現在のカラムの位置, 現在の行/全行数
+set statusline+=%{&ft!=''?'\|'.&ft:''} " ファイルタイプ名。見栄えのため%yを使わない
+set statusline+=\|%{&fenc!=''?&fenc:&enc} " 文字エンコーディング
+set statusline+=%{&bomb?'\|BOM':''} " BOM
+set statusline+=\|%{&ff==#'unix'?'LF':&ff==#'mac'?'CR':'CRLF'} " 改行コード
+" Default indent
+set breakindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" Tags
+set cscopetag
+" Chars
+set ambiwidth=double
+" Color scheme
+colorscheme darkman
+" Path
+set isfname&
+set isfname-==
+set completeslash=slash
+" Completion
+set completeopt&
+set completeopt+=noselect
+" Tab page
+set tabpagemax=50
+" Window
+set splitbelow
+" Search
+set incsearch
+" Edit
+set nofixendofline
+
+augroup myvimrc_options
+    autocmd!
+    autocmd BufNewFile,BufRead * setlocal formatoptions-=o
+augroup END
+
+
+"
+" Keymap
+"
+
+" Set highlights when searching
+nnoremap <nowait> / :<C-u>set hlsearch<CR>/
+" Turn off search highlight and preview window
+nnoremap <silent><nowait> <Esc><Esc> :<C-u>set nohlsearch<CR>:pclose<CR>
+" Set s/ when typing : in visual mode
+vnoremap : :<C-u>'<,'>s/
+" Keybindings for popup menus
+inoremap <expr> <C-f> pumvisible() ? "\<PageDown>" : "\<C-f>"
+inoremap <expr> <C-b> pumvisible() ? "\<PageUp>" : "\<C-b>"
+" Disable Key bind
+nnoremap K <Nop>
+
+
+"
+" Macros
+"
+
+" let s:macrofiles = [
+"             \ expand('~/source/vim-script/macros/rtrim.vim'),
+"             \ expand('~/source/vim-script/macros/openurl.vim'),
+"             \ ]
+" if fnamemodify(expand('$MYVIMRC'), ':h') . '/colors' ==# resolve(expand('%:p:h'))
+"     let s:macrofiles = add(s:macrofiles, '~/source/vim-script/macros/highlight-view.vim')
+" endif
+
+" for s:file in s:macrofiles
+"     if filereadable(s:file)
+"         execute 'source' s:file
+"     endif
+" endfor
+" unlet s:macrofiles s:file

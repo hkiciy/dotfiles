@@ -1,0 +1,97 @@
+{
+  "rust": [
+    {
+      "cmd": "cargo check",
+      "efm": "%-Gerror: aborting %.%#,%-Gerror: Could not compile %.%#,%Eerror: %m,%Eerror%m,%Wwarning: %m,%Z%[ ]%#-->%[ ]%#%f:%l:%c,%-G%.%#"
+    }
+  ],
+  "sh": [
+    {
+      "cmd": "shellcheck -f gcc %",
+      "efm": "%f:%l:%c: %m"
+    }
+  ],
+  "python": [
+    {
+      "cmd": "pycodestyle %",
+      "efm": "%f:%l:%c: %m"
+    },
+    {
+      "cmd": "pyflakes %",
+      "efm": "%f:%l:%c: %m"
+    },
+    {
+      "cmd": "pydocstyle %",
+      "efm": "%A%f:%l %.%#:,%Z%*[ ]%m"
+    },
+    {
+      "cmd": "pylint -f parseable %",
+      "efm": "%f:%l: %m"
+    }
+  ],
+  "php": [
+    {
+      "cmd": "php -l -d display_errors=1 -d log_errors=0 %",
+      "efm": "%m in %f on line %l"
+    },
+    {
+      "cmd": "phpcs --report=csv --standard=psr12 %",
+      "efm": "\"%f\"\\,%l\\,%c\\,%m"
+    },
+    {
+      "cmd": "phpmd % text ~/dotfiles/phpmd.xml",
+      "efm": "%f:%l %m"
+    }
+  ],
+  "javascript": [
+    {
+      "cmd": "eslint -f compact %",
+      "efm": "%f: line %l\\, col %c\\, %m"
+    }
+  ],
+  "css": [
+    {
+      "cmd": "stylelint %",
+      "efm": "%-P%f,%*[ ]%l:%c%*[ ]✖%*[ ]%m,%-G%.%#,%-Q"
+    }
+  ],
+  "go": [
+    {
+      "cmd": "golint %",
+      "efm": "%f:%l:%c: %m"
+    },
+    {
+      "cmd": "go vet %",
+      "efm": "%Evet: %.%\\+: %f:%l:%c: %m,%f:%l:%c: %m,%W%f:%l: %m,%-G%.%#"
+    }
+  ],
+  "typescript": [
+    {
+      "cmd": "tsc --target ES5 %",
+      "efm": "%f(%l\\,%c): %m"
+    }
+  ],
+  "vim": [
+    {
+      "cmd": "vint %"
+    }
+  ],
+  "c": [
+    {
+      "cmd": "clang -fsyntax-only -Wall %",
+      "efm": "%f:%l:%c: %m"
+    }
+  ],
+  "cpp": [
+    {
+      "cmd": "clang++ -fsyntax-only %",
+      "efm": "%f:%l:%c: %m"
+    }
+  ],
+  "json": [
+    {
+      "cmd": "jsonlint -c %",
+      "efm": "%f: line %l\\, col %c\\, %m"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+set colored-completion-prefix On
+set colored-stats On
+set completion-query-items 0
+set mark-symlinked-directories On
+set menu-complete-display-prefix On
+set show-all-if-ambiguous On
+set visible-stats On

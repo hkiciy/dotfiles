@@ -1,0 +1,63 @@
+sc
+    scriptencoding utf-8
+lt
+    localtime()
+mc
+    message clear
+hd
+    python << EOF
+    """
+    $1
+    """
+    EOF
+redirr
+    redir @a
+    silent $1
+    redir END
+redirf
+    redir! > $1
+    silent $2
+    redir END
+em
+    echomsg 
+em2
+    echomsg '[' . $1 . ']'
+l
+    line('.')
+c
+    col('.')
+cu
+    call cursor($1, $2)
+r
+    return
+e
+    echo 
+a
+    autocmd
+au
+    augroup $1
+        autocmd!
+        autocmd $2
+    augroup END
+fun
+    function! s:$1($2) abort
+        $3
+    endfunction
+fung
+    function! $1($2) abort
+        $3
+    endfunction
+bench
+    let s:start = reltime()
+    $1
+    echo reltimestr(reltime(s:start))
+for
+    for i in range($1)
+        $2
+    endfor
+nm
+    nnoremap 
+im
+    nnoremap
+es
+    echomsg string($1)

@@ -1,0 +1,99 @@
+bench
+    console.time();
+    $1
+    console.timeEnd();
+vue
+    new Vue({
+      el: '#$1',
+      data: {
+        $2
+      },
+    });
+vuec
+    Vue.component('$1', {
+      template: '$2',
+    });
+if
+    if($1) {
+      $2
+    }
+seti
+    setInterval($1);
+sett
+    setTimeout($1);
+v
+    var $1 = $2;
+vf
+    var $1 = function($2) {
+      $3
+    };
+for
+    for (let i = 0, l = $1; i < l; i += 1) {
+      $2
+    }
+for2
+    for (let i = $1.length - 1; i >= 0; i -= 1) {
+      $2
+    }
+f
+    function $1($2) {
+        $3
+    }
+us
+    'use strict';
+cc
+    console.clear();
+cl
+    console.log($1);
+cd
+    console.dir($1);
+ael
+    addEventListener('$1', $2, false);
+aelb
+    addEventListener('blur', $1, false);
+aelf
+    addEventListener('focus', $1, false);
+aelc
+    addEventListener('click', $1, false);
+aelkd
+    addEventListener('keydown', $1, false);
+aelku
+    addEventListener('keyup', $1, false);
+aelkp
+    addEventListener('keypress', $1, false);
+ac
+    appendChild($1);
+cn
+    cloneNode($1);
+ce
+    document.createElement('$1');
+ctn
+    document.createTextNode($1)
+dgi
+    document.getElementById('$1');
+gi
+    getElementById('$1');
+dgn
+    document.getElementsByName('$1');
+gn
+    getElementsByName('$1');
+dgtn
+    document.getElementsByTagName('$1');
+gtn
+    getElementsByTagName('$1');
+dqs
+    document.querySelector('$1');
+qs
+    querySelector('$1');
+dqsa
+    document.querySelectorAll('$1');
+qsa
+    querySelectorAll('$1');
+rc
+    removeChild($1);
+init
+    (() => {
+      'use strict';
+
+      $1 
+    })();

@@ -1,0 +1,8 @@
+set clipboard&
+set clipboard-=autoselect
+set clipboard^=unnamedplus
+set ignorecase
+set incsearch
+
+nnoremap <nowait> / :<C-u>set hlsearch<CR>/
+nnoremap <silent><nowait> <Esc><Esc> :<C-u>set nohlsearch<CR>

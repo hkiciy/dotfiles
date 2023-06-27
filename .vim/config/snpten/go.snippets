@@ -1,0 +1,20 @@
+p
+    fmt.Println($1)
+f
+    func $1($2) {
+        $3
+    } 
+for
+    for i := $1; i < $2; i++ {
+        $3
+    }
+if
+    if $1 {
+    }
+sw
+    switch $1 {
+    case $2:
+    }
+st
+    type $1 struct {
+    }

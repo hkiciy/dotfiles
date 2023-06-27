@@ -1,0 +1,137 @@
+for
+    for ($i = 0, $len = $1; $i < $len; $i++) {
+        $2
+    }
+fe
+    foreach($1 as $2) {
+        $3
+    }
+e
+    echo $1;
+dugc
+    $this->getConnection()
+dugds
+    $this->getDataSet()
+ae
+    $this->assertEquals($1, $2);
+po
+    $_POST['$1']$2
+ge
+    $_GET['$1']$2
+se
+    $_SESSION['$1']$2
+fv
+    filter_var($1 ?? '')
+c
+    class $1
+    {
+        $2
+    }
+cex
+    class $1 extends $2
+    {
+        $3
+    }
+ex
+    extends 
+r
+    return
+fgc
+    file_get_contents($1);
+fpc
+    file_put_contents($1, $2);
+vd
+    var_dump($1);
+vdp
+    echo '<pre>'; var_dump($1); echo '</pre>';
+hsc
+    htmlspecialchars($1, ENT_QUOTES, 'UTF-8')
+_c
+    function __construct($1)
+    {
+        $2
+    }
+fun
+    function $1($2)
+    {
+        $3
+    }
+t
+    $this->
+pbf
+    public function $1($2)
+    {
+        $3
+    }
+pvf
+    private function $1($2)
+    {
+        $3
+    }
+ptf
+    protected function $1($2)
+    {
+        $3
+    }
+file
+    file($1, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+phpunitinit
+    class $1 extends PHPUnit_Framework_TestCase
+    {
+        protected $object;
+        protected function setUp()
+        {
+        }
+
+        public function test$1()
+        {
+            $this->assertSame();
+        }
+    }
+dbunitinit
+    class $1 extends PHPUnit_Extensions_Database_TestCase
+    {
+        static private $db = null;
+        private $conn = null;
+        protected $object;
+
+        protected function setUp()
+        {
+        }
+
+        public function getConnection()
+        {
+            if ($this->conn === null) {
+                $file = dirname(__FILE__) . '/test.db';
+                if (self::$db == null) {
+                    self::$db = new PDO('sqlite:'. $file);
+                    self::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                    $this->createTable();
+                }
+                $this->conn = $this->createDefaultDBConnection(self::$db, ':'. $file);
+            }
+
+            return $this->conn;
+        }
+
+        public function getDataSet()
+        {
+            // $file = dirname(__FILE__) . '/dataset.xml';
+            // return $this->createXmlDataSet($file);
+        }
+
+        public function createTable()
+        {
+            // $sql = 'CREATE TABLE IF NOT EXISTS movie (
+            //     videoid TEXT NOT NULL UNIQUE,
+            //     title TEXT NOT NULL,
+            //     memo TEXT
+            // )';
+            // self::$db->exec($sql);
+        }
+    }
+p
+    <?php 
+
+pp
+    <?php $1 ?>
