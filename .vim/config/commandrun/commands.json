@@ -1,4 +1,8 @@
 {
+  "plantuml": {
+    "cmd": "plantuml",
+    "file": "%"
+  },
   "typescript": {
       "cmd": "node",
       "cmdafter": "-r esbuild-register",

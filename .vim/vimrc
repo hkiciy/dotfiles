@@ -254,6 +254,7 @@ set nofixendofline
 augroup myvimrc_options
     autocmd!
     autocmd BufNewFile,BufRead * setlocal formatoptions-=o
+    autocmd BufNewFile,BufRead *.plantuml,*.pu setfiletype plantuml
 augroup END
 
 
