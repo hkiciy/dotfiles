@@ -17,8 +17,8 @@ sudo apt install -y fonts-noto-cjk fcitx5-mozc zenity
 
 # Tools
 sudo apt install -y curl devhelp inotify-tools snapd \
-    tre-agrep tree universal-ctags xclip xdotool
-sudo snap install keepassxc scrcpy shellcheck
+    tre-agrep tree universal-ctags xclip xdotool webp-pixbuf-loader
+sudo snap install keepassxc scrcpy shellcheck software-properties-common
 
 # Mail
 sudo apt install -y mailutils mutt
